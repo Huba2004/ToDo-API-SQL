@@ -1,0 +1,9 @@
+<div class="alert alert-warning">
+    <h4>Figyelem!</h4>
+    <p>Néhány feladat lejárt:</p>
+    <ul>
+      <li *ngFor="let task of expiredTasks">
+        "{{ task.description }}" {{ task.daysSinceExpiry }} napja lejárt.
+      </li>
+    </ul>
+  </div>

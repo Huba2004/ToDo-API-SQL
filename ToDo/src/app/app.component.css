@@ -1,0 +1,93 @@
+:root {
+  --primary-color: rgb(37, 81, 95);
+  --text-color: #333;
+  --background-color: #f8f9fa;
+  --border-color: #dee2e6;
+  --button-hover-color: rgb(37, 81, 95);
+}
+
+h1{
+  font-family: 'Protest Strike', sans-serif;
+  font-size: 3rem;
+}
+h2 {
+  font-family: 'Protest Strike', sans-serif;
+  font-size: 1.8rem;
+}
+body {
+  margin: 0; 
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.main {
+  max-width: 900px;
+  width: 85%;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    width: 70%;
+  }
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.lg-text-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5rem;
+  border-radius: 9px;
+  margin: 1rem 0;
+  height: 4rem;
+}
+
+.btn-wrapper {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-menu {
+  background-color: var(--primary-color);
+  color: rgb(6, 6, 6);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size:  1.5rem;
+  
+}
+
+.btn-menu:hover {
+  background-color: var(--button-hover-color);
+}
+
+.active {
+  color: rgb(37,85,91);
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}

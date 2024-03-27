@@ -1,0 +1,32 @@
+<div class="main">
+  <h1>To Do</h1>
+  <div class="input-group">
+    <input type="text" #newItem placeholder="Feladat neve" class="lg-text-input" id="addItemInput" />
+    <input type="date" #newExpiryDate class="lg-text-input" />
+    <button class="btn-primary" (click)="addItem(newItem.value, newExpiryDate.value); newItem.value=''; newExpiryDate.value=''">
+      Hozzáadás
+    </button>
+  </div>
+  <div class="btn-wrapper">
+    <button class="btn btn-menu" [class.active]="filter == 'all'" (click)="setFilter('all')">Minden</button>
+    
+    
+
+    <button class="btn btn-menu" [class.active]="filter == 'active'" (click)="filter = 'active'">Folyamatban</button>
+
+    <button class="btn btn-menu" [class.active]="filter == 'done'" (click)="filter = 'done'"> Befejezett</button>
+    <button class="btn btn-menu" [class.active]="filter === 'expired'" (click)="setFilter('expired')">Lejárt</button>
+  </div>
+    
+    <ul>
+      <li *ngFor="let i of items">
+        <app-item (remove)="remove(i)" [item]="i"></app-item>
+      </li>
+    </ul>
+    
+    <h2 *ngIf="filter === 'all'">Összes feladat: {{getFilteredItemCount()}} db</h2>
+    <h2 *ngIf="filter === 'active'">Folyamatban lévő feladat: {{getFilteredItemCount()}} db</h2>
+    <h2 *ngIf="filter === 'done'">Befejezett feladat: {{getFilteredItemCount()}} db</h2>
+    <h2 *ngIf="filter === 'expired'">Lejárt feladat: {{getFilteredItemCount()}} db</h2>
+    
+</div>
